@@ -6,21 +6,60 @@
 		<title>
 		Nordic Frontend test
 		</title>
+		<script type="text/javascript">
+			
+		function validateForm(){
+			
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+			var phone = document.getElementById("phone").value;
+			var customerType = document.getElementById("phone").value;
+
+			//Check name
+			if(name !== null){
+				console.log(name);
+			}
+
+			//check email
+			if(email.indexOf('@') > 0){
+				console.log(email);
+			}
+
+			//Check phone
+			var custType1 = document.getElementById("cust-type1").checked;
+			var custType2 = document.getElementById("cust-type1").checked;
+			var custType3 = document.getElementById("cust-type1").checked;
+
+			console.log(custType1);
+			console.log(custType2);
+			console.log(custType3);
+
+			console.log(document.getElementById("cust-support").checked);
+			console.log(document.getElementById("prod-support").checked);
+			console.log(document.getElementById("it").checked);
+			console.log(document.getElementById("operation").checked);
+
+			console.log(document.getElementById("message").value);
+
+
+		}
+
+		</script>
 	</head>
 
 	<body>
 	
-		<form>
+		<form method="post" action= "" onsubmit="return validateForm()">
 
 			<label for="name">Name</label><input type="text" id="name">
 			<label for="email">E-mail</label><input type="email" id="email">
 			<label for="phone">Phone</label><input type="text" id="phone">
 			
-			<fieldset>
+			<fieldset id="cust-type">
 			<legend>Customer Type</legend>
-			<label for="cust-type1">1. Consumer</label><input type="radio" id="cust-type1">
-			<label for="cust-type2">2. Doctor</label><input type="radio" id="cust-type2">
-			<label for="cust-type3">3. Retailer</label><input type="radio" id="cust-type3">
+			<label for="cust-type1">1. Consumer</label><input name="cust-type" type="radio" id="cust-type1">
+			<label for="cust-type2">2. Doctor</label><input name="cust-type" type="radio" id="cust-type2">
+			<label for="cust-type3">3. Retailer</label><input name="cust-type" type="radio" id="cust-type3">
 			</fieldset>
 
 			<fieldset>
@@ -49,8 +88,9 @@
 			</fieldset>
 
 			<label for="message">Message</label>
-			<textarea maxlength="20" minlength="20"></textarea>
+			<textarea id="message" name="message" maxlength="20" minlength="20"></textarea>
 
+			<button type="submit">Submit</button>
 
 		</form>
 
